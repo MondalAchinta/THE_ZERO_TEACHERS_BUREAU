@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>THE ZERO TEACHERS BUREAU</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendors/jquery-nice-select/nice-select.css">
+    <link rel="stylesheet" href="vendors/OwlCarousel2/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/magnific-popup/css/magnific-popup.css">
+
+    <!-- Main Stylesheet -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+    <!--Favicon-->
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png"> -->
+    <link rel="shortcut icon" href="assets/images/logo-1.png" type="image/png">
+</head>
+
+<body>
+    <!-- start of preloader -->
+  <div class="preloader"></div>
+  <!-- end of preloader -->
+
+  <!-- signup-modal -->
+  <div class="modal fade rounded" id="signup-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-secondary font-weight-600">Register now</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3 p-sm-4">
+                <form method="POST" class="row">
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="fname">Your Name*</label>
+                        <input class="form-control shadow-none rounded-sm" type="text" placeholder="Jack" id="fname" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="pnumber">Phone Number*</label>
+                        <input class="form-control shadow-none rounded-sm" type="text" placeholder="Phone Number" id="pnumber" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="email2">Email Address*</label>
+                        <input class="form-control shadow-none rounded-sm" type="email" placeholder="jack@email.com" id="email2" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2 d-block">Gender*</label>
+                        <div class="d-flex custom-radio-group rounded-sm">
+                           <div class="custom-control custom-radio">
+                              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                              <label class="custom-control-label" for="customRadio1">Male</label>
+                           </div>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                              <label class="custom-control-label" for="customRadio2">Female</label>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="password">Password*</label>
+                        <input class="form-control shadow-none rounded-sm" type="password" id="password" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="repassword">Retype Password*</label>
+                        <input class="form-control shadow-none rounded-sm" type="password" id="repassword" required>
+                    </div>
+                    <div class="form-group col-12">
+                        <button class="btn btn-primary w-100 rounded-sm" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- signup-modal -->
+
+  <!-- signin-modal -->
+  <!-- <div class="modal fade rounded" id="signin-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mx-auto" style="max-width:400px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-secondary font-weight-600">Welcome back</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3 p-sm-4">
+               <ul class="nav nav-pills nav-justified tab-nav" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                     <a class="nav-link active" id="guardian-tab" data-toggle="tab" href="#guardian" role="tab" aria-controls="guardian" aria-selected="true"><img src="assets/images/guardian.png" class="mr-2" alt="" style="height:45px"> Login as<br>Guardian</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <a class="nav-link" id="tutor-tab" data-toggle="tab" href="#tutor" role="tab" aria-controls="tutor" aria-selected="false"><img src="assets/images/tutor.png" class="mr-2" alt="" style="height:45px"> Login as<br>Tutor</a>
+                  </li>
+               </ul>
+               <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="guardian" role="tabpanel" aria-labelledby="guardian-tab">
+                     <form method="POST" class="row">
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="email">Email Address*</label>
+                             <input class="form-control shadow-none rounded-sm" type="email" id="email" required>
+                         </div>
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="passwordSignIn">Password*</label>
+                             <input class="form-control shadow-none rounded-sm" type="password" id="passwordSignIn" required>
+                         </div>
+                         <div class="form-group col-12">
+                             <button class="btn btn-primary w-100 rounded-sm" type="submit">Sign In</button>
+                         </div>
+                     </form>
+                  </div>
+                  <div class="tab-pane fade" id="tutor" role="tabpanel" aria-labelledby="tutor-tab">
+                     <form method="POST" class="row">
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="email">Email Address*</label>
+                             <input class="form-control shadow-none rounded-sm" type="email" id="email" required>
+                         </div>
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="passwordSignIn">Password*</label>
+                             <input class="form-control shadow-none rounded-sm" type="password" id="passwordSignIn" required>
+                         </div>
+                         <div class="form-group col-12">
+                             <button class="btn btn-primary w-100 rounded-sm" type="submit">Sign In</button>
+                         </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+  </div> -->
+  <!-- signin-modal -->
+  <!-- start top header -->
+  <!-- <div class="top_header">
+   <div class="container-lg">
+      <nav class="navbar navbar-expand-xl navbar-dark px-0">
+         <form class="navbar-form mt-4 mt-xl-0" action="#" method="post">
+            <div class="input-group">
+              <select class="border-0 bg-transparent">
+                <option selected disabled><i class="fas fa-facebook"></i>Category</option>
+                <option value="1">Design</option>
+                <option value="2">Marketing</option>
+                <option value="3">Business</option>
+                <option value="4">IT &amp; Software</option>
+              </select>
+              <input class="form-control border-0 bg-transparent" type="search" placeholder="Search" required>
+              <div class="input-group-append">
+                <button class="border-0 bg-transparent" type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+        </form>
+
+         <div class="d-none d-md-flex align-items-center ml-auto">
+           
+            
+            <a href="#!" class="btn btn-sm btn-primary student_btn" data-toggle="modal" data-target="#signup-modal">Become A Sutdents</a>
+            <a href="#!" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#signup-modal">Become A Tutor</a>
+         </div>
+
+         <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarNavAlt" aria-controls="navbarNavAlt" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fas fa-bars"></span>
+         </button>
+      </nav>
+   </div>
+  </div> -->
+  <header class="bg-white shadow header_bg">
+    <div class="tebu">
+       <h1 class="page_title_one nav_bars_maiin">THE ZERO <span style="color: #F16001;">TEACHERS BUREAU</span></h1>
+    </div>
+    <div class="container-lg">
+     
+       <nav class="navbar navbar-expand-xl navbar-dark px-0  nav_bars_maiin">
+         
+         
+          
+          <div class="navber-logo page_logo logo_main_page">
+             <a class="navbar-brand p-0 m-0" href="index-1.html">
+                <img src="assets/images/logo-1.png" alt="">
+             </a>
+          </div>
+
+          <a href="index-1.html"><h1 class="page_title nav_bars_maiin">THE ZERO <span style="color: #F16001;">TEACHERS BUREAU</span></h1></a>
+
+          
+          
+          <button class="navbar-toggler ml-0 menu_btn" type="button" data-toggle="collapse" data-target="#navbarNavAlt"
+          aria-controls="navbarNavAlt" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fas fa-bars"></span>
+       </button>
+          <div class=" navbar-collapse" id="my_menu">
+             <!-- navbarNavAlt -->
+             <ul class="navbar-nav mt-4 mt-xl-0 ml-auto">
+                <li class="nav-item dropdown active">
+                   <a class="nav-link " href="index.html">
+                      Home
+                   </a>
+
+                </li>
+                <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="about.html" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      About <i class="fas fa-angle-down"></i>
+                   </a>
+                   <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="about.html">History </a></li>
+                      <li><a class="dropdown-item" href="mission-vision.html">Mission & Vission</a></li>
+                      <li><a class="dropdown-item" href="why_choose.html">Why Choose Us</a></li>
+                   </ul>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="courses.html">Services</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="tutor.html">Tutor Page</a>
+                </li>
+
+                <li class="nav-item">
+                   <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link" href="#!" data-toggle="modal" data-target="#signin-modal">Login</a>
+             </li> -->
+             </ul>
+
+             <!-- <div class="ml-0 ml-xl-4 mt-3 mt-xl-0 mb-3 mb-xl-0 text-center text-xl-right">
+             <a href="#!" class="btn btn-sm btn-blue rounded-pill" data-toggle="modal" data-target="#signup-modal">Become A Students</a>
+          </div> -->
+             <div class="ml-0 ml-xl-4 mt-3 mt-xl-0 mb-3 mb-xl-0 text-center text-xl-right">
+                <a href="become-tutor.html" class="btn btn-sm btn-blue rounded-pill">Login</a>
+             </div>
+          </div>
+
+       </nav>
+       <!-- 
+    <div class="d-flex align-items-center header-login-btn">
+       <a href="guardin-form.html" class="btn btn-sm btn-primary student_btn">Become A Sutdents</a>
+       <a href="form.html" class="btn btn-sm btn-primary" >Become A Tutor</a>
+    </div> -->
+
+    </div>
+ </header>
+
+  <!-- <header class="bg-white shadow">
+   <div class="container-lg">
+      <nav class="navbar navbar-expand-xl navbar-dark px-0">
+         <a class="navbar-brand" href="index-1.html">
+            <img src="assets/images/logo-2.png" alt="" style="height:49px">
+         </a>
+
+         <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarNavAlt" aria-controls="navbarNavAlt" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fas fa-bars"></span>
+         </button>
+         
+         <div class="collapse navbar-collapse" id="navbarNavAlt">
+            <ul class="navbar-nav mt-4 mt-xl-0 ml-auto">
+               <li class="nav-item dropdown active">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Home 
+                  </a>
+                  
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     About <i class="fas fa-angle-down"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="about.html">History </a></li>
+                     <li><a class="dropdown-item" href="about-2.html">Mission & Vission</a></li>
+                     <li><a class="dropdown-item" href="about-3.html">Why Choose Us</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="courses.html">Services</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="blog.html">Tutor Page</a>
+               </li>
+              
+               <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#!" data-toggle="modal" data-target="#signin-modal">Login</a>
+               </li> 
+            </ul>
+
+             <div class="ml-0 ml-xl-4 mt-3 mt-xl-0 mb-3 mb-xl-0 text-center text-xl-right">
+               <a href="#!" class="btn btn-sm btn-blue rounded-pill" data-toggle="modal" data-target="#signup-modal">Become A Students</a>
+            </div>
+            <div class="ml-0 ml-xl-4 mt-3 mt-xl-0 mb-3 mb-xl-0 text-center text-xl-right">
+               <a href="#!" class="btn btn-sm btn-blue rounded-pill" data-toggle="modal" data-target="#signup-modal">Login</a>
+            </div>
+         </div>
+      </nav>
+   </div>
+</header> -->
+    <section class="guardian_login">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-secondary font-weight-600">Join as a Guardian</h4>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button> -->
+                        </div>
+                        <div class="modal-body p-3 p-sm-4">
+                            <form method="POST" class="row">
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="fname">Your Name*</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text" placeholder="Jack"
+                                        id="fname" required>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="pnumber">Contact Number*</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text"
+                                        placeholder="Contact Number" id="pnumber" required>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="pnumber">Whatsapp Number</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text"
+                                        placeholder="Whatsapp Number" id="pnumber" required>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="email2">Location</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text"
+                                        placeholder="Location" id="email2" required>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="email2">Class</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text"
+                                        placeholder="Class" id="email2" required>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="email2">Others</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text" placeholder="others"
+                                        id="email2">
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="email2">Subject</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text" placeholder="subject"
+                                        id="email2" required>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="email2">Board</label>
+                                    <input class="form-control shadow-none rounded-sm" type="text" placeholder="Board"
+                                        id="email2" required>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="email2">Select Timing<span
+                                            class="star">*</span></label>
+                                    <select name="documentSelect" id="documentSelect"
+                                        class="form-control shadow-none rounded-sm w-100" required>
+                                        <option>Select Timing</option>
+                                        <option value="">Online</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-20 col-12 col-md-6">
+                                    <label class="text-secondary h6 mb-2" for="email2">Week Days<span class="star">*</span></label>
+                                    <select name="documentSelect" id="documentSelect"
+                                        class="form-control shadow-none rounded-sm w-100" required>
+                                        <option>..Week days..</option>
+                                        <option value="">1 Days</option>
+                                        <option value="">2 Days</option>
+                                        <option value="">3 Days</option>
+                                        <option value="">4 Days</option>
+                                        <option value="">5 Days</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-20 col-12">
+                                    <label class="text-secondary h6 mb-2 d-block">Teachers Preference</label>
+                                    <div class="d-flex custom-radio-group rounded-sm">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Male</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio2" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio2">Female</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-20 col-12 text-center">
+                                    <div class="custom-control custom-radio">
+                                        <input type="checkbox" id="customCheckbox2" name="customCheckbox2"
+                                            class="custom-control-input customCheckbox">
+                                        <label class="custom-control-label" for="customCheckbox2">Please read our terms
+                                            and condition</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    <button class="btn btn-primary w-100 rounded-sm" type="submit">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ------------------------ -->
+    <!-- jQuery -->
+    <script src="vendors/jQuery/jquery.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/jquery-nice-select/jquery.nice-select.min.js"></script>
+    <script src="vendors/OwlCarousel2/owl.carousel.min.js"></script>
+    <script src="vendors/counterup/waypoints.min.js"></script>
+    <script src="vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="vendors/magnific-popup/js/magnific-popup.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

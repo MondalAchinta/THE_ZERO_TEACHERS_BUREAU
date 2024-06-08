@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>EduSkills - Tutor Online Courses & LMS Multipurpose HTML template</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="vendors/jquery-nice-select/nice-select.css">
+  <link rel="stylesheet" href="vendors/OwlCarousel2/owl.carousel.min.css">
+  <link rel="stylesheet" href="vendors/magnific-popup/css/magnific-popup.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+</head>
+
+<body id="top">
+
+  <!-- start of preloader -->
+  <div class="preloader"></div>
+  <!-- end of preloader -->
+
+  <!-- signup-modal -->
+  <div class="modal fade rounded" id="signup-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-secondary font-weight-600">Register now</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3 p-sm-4">
+                <form method="POST" class="row">
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="fname">Your Name*</label>
+                        <input class="form-control shadow-none rounded-sm" type="text" placeholder="Jack" id="fname" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="pnumber">Phone Number*</label>
+                        <input class="form-control shadow-none rounded-sm" type="text" placeholder="Phone Number" id="pnumber" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="email2">Email Address*</label>
+                        <input class="form-control shadow-none rounded-sm" type="email" placeholder="jack@email.com" id="email2" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2 d-block">Gender*</label>
+                        <div class="d-flex custom-radio-group rounded-sm">
+                           <div class="custom-control custom-radio">
+                              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                              <label class="custom-control-label" for="customRadio1">Male</label>
+                           </div>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                              <label class="custom-control-label" for="customRadio2">Female</label>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="password">Password*</label>
+                        <input class="form-control shadow-none rounded-sm" type="password" id="password" required>
+                    </div>
+                    <div class="form-group mb-20 col-12">
+                        <label class="text-secondary h6 mb-2" for="repassword">Retype Password*</label>
+                        <input class="form-control shadow-none rounded-sm" type="password" id="repassword" required>
+                    </div>
+                    <div class="form-group col-12">
+                        <button class="btn btn-primary w-100 rounded-sm" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- signup-modal -->
+
+  <!-- signin-modal -->
+  <div class="modal fade rounded" id="signin-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mx-auto" style="max-width:400px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-secondary font-weight-600">Welcome back</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3 p-sm-4">
+               <ul class="nav nav-pills nav-justified tab-nav" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                     <a class="nav-link active" id="guardian-tab" data-toggle="tab" href="#guardian" role="tab" aria-controls="guardian" aria-selected="true"><img src="assets/images/guardian.png" class="mr-2" alt="" style="height:45px"> Login as<br>Guardian</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <a class="nav-link" id="tutor-tab" data-toggle="tab" href="#tutor" role="tab" aria-controls="tutor" aria-selected="false"><img src="assets/images/tutor.png" class="mr-2" alt="" style="height:45px"> Login as<br>Tutor</a>
+                  </li>
+               </ul>
+               <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="guardian" role="tabpanel" aria-labelledby="guardian-tab">
+                     <form method="POST" class="row">
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="email">Email Address*</label>
+                             <input class="form-control shadow-none rounded-sm" type="email" id="email" required>
+                         </div>
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="passwordSignIn">Password*</label>
+                             <input class="form-control shadow-none rounded-sm" type="password" id="passwordSignIn" required>
+                         </div>
+                         <div class="form-group col-12">
+                             <button class="btn btn-primary w-100 rounded-sm" type="submit">Sign In</button>
+                         </div>
+                     </form>
+                  </div>
+                  <div class="tab-pane fade" id="tutor" role="tabpanel" aria-labelledby="tutor-tab">
+                     <form method="POST" class="row">
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="email">Email Address*</label>
+                             <input class="form-control shadow-none rounded-sm" type="email" id="email" required>
+                         </div>
+                         <div class="form-group mb-20 col-12">
+                             <label class="text-secondary h6 font-weight-600 mb-2" for="passwordSignIn">Password*</label>
+                             <input class="form-control shadow-none rounded-sm" type="password" id="passwordSignIn" required>
+                         </div>
+                         <div class="form-group col-12">
+                             <button class="btn btn-primary w-100 rounded-sm" type="submit">Sign In</button>
+                         </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- signin-modal -->
+  
+<header class="bg-white shadow">
+   <div class="container-lg">
+      <nav class="navbar navbar-expand-xl navbar-dark px-0">
+         <a class="navbar-brand" href="index-1.html">
+            <img src="assets/images/logo-2.png" alt="" style="height:49px">
+         </a>
+
+         <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarNavAlt" aria-controls="navbarNavAlt" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fas fa-bars"></span>
+         </button>
+         
+         <div class="collapse navbar-collapse" id="navbarNavAlt">
+            <ul class="navbar-nav mt-4 mt-xl-0 ml-auto">
+               <li class="nav-item dropdown active">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Home <i class="fas fa-angle-down"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="index-1.html">HomeTutor</a></li>
+                     <li><a class="dropdown-item" href="index-2.html">Online Course</a></li>
+                     <li><a class="dropdown-item" href="index-3.html">Online University</a></li>
+                     <li><a class="dropdown-item" href="index-4.html">E-learning Home <span>New</span></a></li>
+                     <li><a class="dropdown-item" href="index-5.html">Online LMS Home <span>New</span></a></li>
+                     <li><a class="dropdown-item" href="index-6.html">University Home <span>New</span></a></li>
+                     <li><a class="dropdown-item" href="index-1-rtl.html">HomeTutor Rtl</a></li>
+                     <li><a class="dropdown-item" href="index-2-rtl.html">Online Course Rtl</a></li>
+                     <li><a class="dropdown-item" href="index-3-rtl.html">Online University Rtl</a></li>
+                     <li><a class="dropdown-item" href="index-4-rtl.html">E-learning Home Rtl <span>New</span></a></li>
+                     <li><a class="dropdown-item" href="index-5-rtl.html">Online LMS Home <span>New</span></a></li>
+                     <li><a class="dropdown-item" href="index-6-rtl.html">University Home Rtl <span>New</span></a></li>
+                  </ul>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     About <i class="fas fa-angle-down"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="about.html">About Us 01</a></li>
+                     <li><a class="dropdown-item" href="about-2.html">About Us 02</a></li>
+                     <li><a class="dropdown-item" href="about-3.html">About Us 03</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="courses.html">Courses</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="blog.html">Blog</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Pages <i class="fas fa-angle-down"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="job-board.html">Job Board</a></li>
+                     <li><a class="dropdown-item" href="course-details.html">Course Details</a></li>
+                     <li><a class="dropdown-item" href="course-details-2.html">Course Details 02</a></li>
+                     <li><a class="dropdown-item" href="blog-details.html">Blog Details</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#!" data-toggle="modal" data-target="#signin-modal">Signin</a>
+               </li>
+            </ul>
+
+            <div class="ml-0 ml-xl-4 mt-3 mt-xl-0 mb-3 mb-xl-0 text-center text-xl-right">
+               <a href="#!" class="btn btn-sm btn-blue rounded-pill" data-toggle="modal" data-target="#signup-modal">Become A Tutor</a>
+            </div>
+         </div>
+      </nav>
+   </div>
+</header>
+
+<!-- start of page-header -->
+<section class="page-header bg-cover has-overlay" style="background-image: url(assets/images/page-header-03.jpg)">
+   <div class="container">
+      <div class="row">
+         <div class="col-12 text-center">
+            <h2 class="section-title text-white font-weight-bold mb-20">Privacy Policy</h2>
+            <nav aria-label="breadcrumb">
+               <ul class="breadcrumb bg-transparent justify-content-center p-0 font-weight-600 mb-0">
+                  <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item">Privacy Policy</li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- end of page-header -->
+
+
+<div class="privicy_policy_section">
+    <div class="bg-gray-100">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold mb-2">Privacy Policy</h2>
+    
+            <p class="mb-4">
+                This privacy policy sets out how our website uses and protects any information that you give us when you use
+                this
+                website.
+            </p>
+    
+            <h2 class="text-2xl font-bold mb-2">Information We Collect</h2>
+    
+            <p class="mb-4">
+                We may collect the following information:
+            </p>
+    
+            <ul class="list-disc list-inside mb-4">
+                <li>Your name and contact information</li>
+                <li>Demographic information</li>
+                <li>Other information relevant to customer surveys and/or offers</li>
+            </ul>
+    
+            <h2 class="text-2xl font-bold mb-2">How We Use the Information</h2>
+    
+            <p class="mb-4">
+                We require this information to understand your needs and provide you with a better service, and in
+                particular
+                for
+                the following reasons:
+            </p>
+    
+            <ul class="list-disc list-inside mb-4">
+                <li>Internal record keeping</li>
+                <li>Improving our products and services</li>
+                <li>Sending promotional emails about new products, special offers, or other information which we think you
+                    may
+                    find
+                    interesting</li>
+                <li>From time to time, we may also use your information to contact you for market research purposes. We may
+                    contact
+                    you by email, phone, or mail. We may use the information to customize the website according to your
+                    interests.</li>
+            </ul>
+    
+            <h2 class="text-2xl font-bold mb-2">Security</h2>
+    
+            <p class="mb-4">
+                We are committed to ensuring that your information is secure. In order to prevent unauthorized access or
+                disclosure,
+                we have put in place suitable physical, electronic, and managerial procedures to safeguard and secure the
+                information we collect online.
+            </p>
+    
+            <h2 class="text-2xl font-bold mb-2">Cookies</h2>
+    
+            <p class="mb-4">
+                A cookie is a small file that asks permission to be placed on your computer's hard drive. Once you agree,
+                the
+                file
+                is added, and the cookie helps analyze web traffic or lets you know when you visit a particular site.
+                Cookies
+                allow
+                web applications to respond to you as an individual. The web application can tailor its operations to your
+                needs,
+                likes, and dislikes by gathering and remembering information about your preferences.
+            </p>
+    
+            <p class="mb-4">
+                Overall, cookies help us provide you with a better website by enabling us to monitor which pages you find
+                useful
+                and which you do not. A cookie in no way gives us access to your computer or any information about you,
+                other
+                than
+                the data you choose to share with us.
+            </p>
+    
+            <h2 class="text-2xl font-bold mb-2">Links to Other Websites</h2>
+    
+            <p class="mb-4">
+                Our website may contain links to other websites of interest. However, once you have used these links to
+                leave
+                our
+                site, you should note that we do not have any control over that other website. Therefore, we cannot be
+                responsible
+                for the protection and privacy of any information which you provide whilst visiting such sites and such
+                sites
+                are
+                not governed by this privacy statement. You should exercise caution and look at the privacy statement
+                applicable
+                to
+                the website in question.
+            </p>
+    
+            <h2 class="text-2xl font-bold mb-2">Controlling Your Personal Information</h2>
+    
+            <p class="mb-4">
+                You may choose to restrict the collection or use of your personal information in the following ways:
+            </p>
+    
+            <ul class="list-disc list-inside mb-4">
+                <li>If you have previously agreed to us using your personal information for direct marketing purposes, you
+                    may
+                    change your mind at any time by writing to or emailing us at [email protected]</li>
+                <li>We will not sell, distribute, or lease your personal information to third parties unless we have your
+                    permission
+                    or are required by law to do so. We may use your personal information to send you promotional
+                    information
+                    about
+                    third parties which we think you may find interesting if you tell us that you wish this to happen.</li>
+                <li>You may request details of personal information which we hold about you. If you would like a copy of the
+                    information held on you, please write to [Your Company Name, Address, City, State, Zip Code] or email
+                    [email protected]</li>
+                <li>If you believe that any information we are holding on you is incorrect or incomplete, please write to or
+                    email
+                    us as soon as possible at the above address. We will promptly correct any information found to be
+                    incorrect.
+                </li>
+            </ul>
+    
+            <p class="mb-4">
+                This privacy policy is subject to change without notice.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+   <div class="container">
+      
+      <div class="py-3">
+         <div class="row align-items-center">
+            <div class="col-lg-9 text-center text-lg-left mb-4 mb-lg-0">
+               <ul class="list-unstyled list-inline font-weight-500">
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">HomeTutor</a></li>
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">Online Class</a></li>
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">About</a></li>
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">Courses</a></li>
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">Blog</a></li>
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">Contact us</a></li>
+               </ul>
+            </div>
+            <div class="col-lg-3 text-center text-lg-right">
+               <ul class="social-icons list-unstyled mr-2">
+                  <li><a href="#!" class="text-link"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#!" class="text-link"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#!" class="text-link"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="#!" class="text-link pr-0"><i class="fab fa-skype"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="footer-bottom py-3 border-top">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-lg-9 text-center text-lg-left mb-3 mb-lg-0">
+               &copy; Copyright All Review <span class="text-primary">Edu</span>Skills
+            </div>
+            <div class="col-lg-3 text-center text-lg-right">
+               <ul class="list-unstyled list-inline font-weight-500">
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#!" class="p-2 d-block text-link">Contact us</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<a href="#top" class="scroll-to-top">
+   <span class="fas fa-chevron-up"></span>
+</a>
+
+<!-- jQuery -->
+<script src="vendors/jQuery/jquery.min.js"></script>
+<script src="vendors/bootstrap/bootstrap.min.js"></script>
+<script src="vendors/jquery-nice-select/jquery.nice-select.min.js"></script>
+<script src="vendors/OwlCarousel2/owl.carousel.min.js"></script>
+<script src="vendors/counterup/waypoints.min.js"></script>
+<script src="vendors/counterup/jquery.counterup.min.js"></script>
+<script src="vendors/magnific-popup/js/magnific-popup.min.js"></script>
+
+<!-- Main Script -->
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
