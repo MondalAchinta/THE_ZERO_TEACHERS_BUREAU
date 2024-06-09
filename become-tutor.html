@@ -156,7 +156,15 @@
 
    <!-- Main Script -->
    <script src="assets/js/script.js"></script>
+      <script>
+      $(document).ready(function () {
+         $('.menu_btn').click(function (e) {
+            e.preventDefault();
+            $("#my_menu").toggleClass("active_menu");
 
+         });
+      })
+   </script>
 </body>
 
 </html>
